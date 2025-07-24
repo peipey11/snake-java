@@ -39,10 +39,15 @@ public class SnakeGame extends JPanel{
     }
 
     public void draw(Graphics g){
+        //grid
+        for (int i=0; i < boardWidth/tileSize;i++){
+            g.drawLine(i*tileSize, 0, i*tileSize, boardHeight);
+            g.drawLine(0, i*tileSize, boardWidth, i*tileSize);
+        }
 
         //snake colour
         g.setColor(Color.green);
-        g.fillRect(snakeHead.x, snakeHead.y, tileSize, tileSize);
+        g.fillRect(snakeHead.x * tileSize, snakeHead.y * tileSize, tileSize, tileSize);
 
 
     }
